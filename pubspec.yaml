@@ -26,3 +26,11 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
+
+  assets:
+    - assets/noise/
+
+  fonts:
+    - family: Space-Grotesk
+      fonts:
+        - asset: assets/fonts/space_grotesk.ttf

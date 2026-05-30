@@ -14,18 +14,18 @@ class ScreenHero extends StatelessWidget {
       // ScreenCategories(moviesList: moviesList),
     ];
 
-    List<NavigationDestination> navigationDestinations = const [
-      NavigationDestination(
-        icon: Icon(Icons.home_outlined),
-        label: 'Home',
-        selectedIcon: Icon(Icons.home),
-      ),
-      NavigationDestination(
-        icon: Icon(Icons.category_outlined),
-        label: 'Categories',
-        selectedIcon: Icon(Icons.category),
-      ),
-    ];
+    // List<NavigationDestination> navigationDestinations = const [
+    //   NavigationDestination(
+    //     icon: Icon(Icons.home_outlined),
+    //     label: 'Home',
+    //     selectedIcon: Icon(Icons.home),
+    //   ),
+    //   NavigationDestination(
+    //     icon: Icon(Icons.category_outlined),
+    //     label: 'Categories',
+    //     selectedIcon: Icon(Icons.category),
+    //   ),
+    // ];
 
     return ValueListenableBuilder(
       valueListenable: btmnavbarNotifier,

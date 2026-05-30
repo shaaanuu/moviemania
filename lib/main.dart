@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'presentation/hero/screen_hero.dart';
+import 'theme/app_theme.dart';
 
 void main() => runApp(MyApp());
 
@@ -11,12 +12,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        scaffoldBackgroundColor: const Color(0xFF1e1e2e),
-        textTheme: const TextTheme(
-          bodyMedium: TextStyle(color: Color(0xFFcdd6f4)),
-        ),
-      ),
+      theme: appTheme,
       home: ScreenHero(),
     );
   }
