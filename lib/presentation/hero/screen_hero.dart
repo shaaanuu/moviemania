@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../explore/screen_explore.dart';
 import '../home/screen_home.dart';
+import '../tagged/screen_tagged.dart';
 import '../widgets/fab.dart';
 
 class ScreenHero extends StatelessWidget {
@@ -14,7 +15,7 @@ class ScreenHero extends StatelessWidget {
     List<Widget> pages = [
       ScreenHome(),
       ScreenExplore(),
-      ScreenExplore(),
+      ScreenTagged(),
     ];
 
     return ValueListenableBuilder(
