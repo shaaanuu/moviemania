@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:phosphor_flutter/phosphor_flutter.dart';
 
 import '../../theme/text_styles.dart';
+import '../widgets/media_section.dart';
 
 class ScreenHome extends StatelessWidget {
   const ScreenHome({super.key});
@@ -108,6 +109,9 @@ class ScreenHome extends StatelessWidget {
             ],
           ),
         ),
+        MediaSection(title: 'Trending Today'),
+        MediaSection(title: 'Top Rated'),
+        MediaSection(title: 'Upcoming'),
       ],
     );
   }
