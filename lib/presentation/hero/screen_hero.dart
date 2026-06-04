@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../explore/screen_explore.dart';
 import '../home/screen_home.dart';
 
 class ScreenHero extends StatelessWidget {
@@ -10,6 +11,7 @@ class ScreenHero extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     List<Widget> pages = [
+      ScreenExplore(),
       ScreenHome(),
       // ScreenCategories(moviesList: moviesList),
     ];
