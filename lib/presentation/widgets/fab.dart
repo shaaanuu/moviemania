@@ -27,6 +27,14 @@ class Fab extends StatelessWidget {
             decoration: BoxDecoration(
               color: AppColors.bg,
               borderRadius: BorderRadius.circular(16),
+              boxShadow: const [
+                BoxShadow(
+                  color: AppColors.black25,
+                  offset: Offset(0, 4),
+                  blurRadius: 4,
+                  spreadRadius: 0,
+                ),
+              ],
             ),
             child: ClipRRect(
               borderRadius: BorderRadius.circular(16),
@@ -48,11 +56,11 @@ class Fab extends StatelessWidget {
                         mainAxisSize: MainAxisSize.min,
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
-                          _fabItem(),
+                          _fabItem(PhosphorIconsDuotone.house),
                           const SizedBox(width: 12),
-                          _fabItem(),
+                          _fabItem(PhosphorIconsDuotone.binoculars),
                           const SizedBox(width: 12),
-                          _fabItem(),
+                          _fabItem(PhosphorIconsDuotone.floppyDisk),
                         ],
                       ),
                     ),
@@ -68,6 +76,14 @@ class Fab extends StatelessWidget {
             decoration: BoxDecoration(
               color: AppColors.bg,
               shape: BoxShape.circle,
+              boxShadow: const [
+                BoxShadow(
+                  color: AppColors.black25,
+                  offset: Offset(0, 4),
+                  blurRadius: 4,
+                  spreadRadius: 0,
+                ),
+              ],
             ),
             child: ClipOval(
               child: Stack(
@@ -84,7 +100,7 @@ class Fab extends StatelessWidget {
                   Center(
                     child: IconButton(
                       icon: PhosphorIcon(
-                        PhosphorIconsDuotone.user,
+                        PhosphorIconsDuotone.magnifyingGlass,
                         size: 32,
                         color: AppColors.text,
                       ),
@@ -101,10 +117,10 @@ class Fab extends StatelessWidget {
   }
 }
 
-Widget _fabItem() {
+Widget _fabItem(IconData icn) {
   return IconButton(
     icon: PhosphorIcon(
-      PhosphorIconsDuotone.user,
+      icn,
       size: 32,
       color: AppColors.text,
     ),
