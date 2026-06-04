@@ -12,8 +12,9 @@ class ScreenHero extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     List<Widget> pages = [
-      ScreenExplore(),
       ScreenHome(),
+      ScreenExplore(),
+      ScreenExplore(),
     ];
 
     return ValueListenableBuilder(
@@ -21,7 +22,12 @@ class ScreenHero extends StatelessWidget {
       builder: (context, int currentIndex, _) => Scaffold(
         body: pages[currentIndex],
         floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
-        floatingActionButton: Fab(),
+        floatingActionButton: Fab(
+          selectedIndex: currentIndex,
+          onItemSelected: (index) {
+            btmnavbarNotifier.value = index;
+          },
+        ),
       ),
     );
   }
