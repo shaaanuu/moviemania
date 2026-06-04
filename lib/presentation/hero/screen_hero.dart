@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../explore/screen_explore.dart';
 import '../home/screen_home.dart';
+import '../widgets/fab.dart';
 
 class ScreenHero extends StatelessWidget {
   ScreenHero({super.key});
@@ -13,32 +14,14 @@ class ScreenHero extends StatelessWidget {
     List<Widget> pages = [
       ScreenExplore(),
       ScreenHome(),
-      // ScreenCategories(moviesList: moviesList),
     ];
-
-    // List<NavigationDestination> navigationDestinations = const [
-    //   NavigationDestination(
-    //     icon: Icon(Icons.home_outlined),
-    //     label: 'Home',
-    //     selectedIcon: Icon(Icons.home),
-    //   ),
-    //   NavigationDestination(
-    //     icon: Icon(Icons.category_outlined),
-    //     label: 'Categories',
-    //     selectedIcon: Icon(Icons.category),
-    //   ),
-    // ];
 
     return ValueListenableBuilder(
       valueListenable: btmnavbarNotifier,
       builder: (context, int currentIndex, _) => Scaffold(
         body: pages[currentIndex],
-        // bottomNavigationBar: NavigationBar(
-        //   destinations: navigationDestinations,
-        //   selectedIndex: currentIndex,
-        //   onDestinationSelected: (newIndex) =>
-        //       btmnavbarNotifier.value = newIndex,
-        // ),
+        floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
+        floatingActionButton: Fab(),
       ),
     );
   }
