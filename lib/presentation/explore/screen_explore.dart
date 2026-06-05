@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:phosphor_flutter/phosphor_flutter.dart';
 
+import '../../api/tmdb.dart';
 import '../../theme/text_styles.dart';
 import '../widgets/media_section.dart';
 
@@ -24,9 +25,10 @@ class ScreenExplore extends StatelessWidget {
             ],
           ),
         ),
-        MediaSection(title: 'Trending Today'),
-        MediaSection(title: 'Top Rated'),
-        MediaSection(title: 'Upcoming'),
+        MediaSection(title: 'Trending Today', loader: TMDB.trendingDay),
+        MediaSection(title: 'Top Rated', loader: TMDB.topRated),
+        MediaSection(title: 'Upcoming', loader: TMDB.upcoming),
+        SizedBox(height: 100),
       ],
     );
   }

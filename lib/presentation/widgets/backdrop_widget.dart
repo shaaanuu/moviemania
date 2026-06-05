@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:phosphor_flutter/phosphor_flutter.dart';
 
+import '../../model/movie.dart';
 import '../../theme/app_colors.dart';
 import '../../theme/text_styles.dart';
 
 class BackdropWidget extends StatelessWidget {
-  const BackdropWidget({super.key});
+  const BackdropWidget({super.key, required this.movie});
+
+  final MovieModel movie;
 
   @override
   Widget build(BuildContext context) {
@@ -16,7 +19,7 @@ class BackdropWidget extends StatelessWidget {
         child: Stack(
           children: [
             Image.network(
-              'https://image.tmdb.org/t/p/w500/2I1OFQJ0L9T0dpU6FobKFWV2PxX.jpg',
+              movie.backdropUrl,
               colorBlendMode: BlendMode.saturation,
               color: Colors.white,
               width: double.infinity,
@@ -70,7 +73,7 @@ class BackdropWidget extends StatelessWidget {
                       top: 8,
                       left: 8,
                       child: Text(
-                        'Project Hail Mary',
+                        movie.title,
                         style: AppTextStyles.subtitle,
                       ),
                     ),
@@ -78,7 +81,7 @@ class BackdropWidget extends StatelessWidget {
                       bottom: 8,
                       left: 8,
                       child: Text(
-                        'Science Fiction - 2026',
+                        '${movie.genres[0]} - ${movie.year}',
                         style: AppTextStyles.subtitle.copyWith(
                           fontWeight: FontWeight.w300,
                           color: AppColors.text75,
@@ -109,7 +112,7 @@ class BackdropWidget extends StatelessWidget {
                     Padding(
                       padding: const EdgeInsets.all(4),
                       child: Text(
-                        'movie',
+                        movie.mediaType,
                         style: AppTextStyles.subtitle.copyWith(
                           fontWeight: FontWeight.w300,
                           fontSize: 8,
@@ -144,7 +147,7 @@ class BackdropWidget extends StatelessWidget {
                           mainAxisSize: MainAxisSize.min,
                           children: [
                             Text(
-                              '8.6',
+                              movie.formattedRating,
                               style: AppTextStyles.subtitle.copyWith(
                                 fontSize: 8,
                               ),
