@@ -3,7 +3,7 @@ description: Discover and explore movies effortlessly with MovieMania.
 
 publish_to: "none"
 
-version: 2
+version: 2.0.0
 
 environment:
   sdk: ^3.11.4
