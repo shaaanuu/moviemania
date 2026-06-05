@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:phosphor_flutter/phosphor_flutter.dart';
+import 'package:phosphoricons_flutter/phosphoricons_flutter.dart';
+
 import '../../theme/app_colors.dart';
 
 class Fab extends StatelessWidget {
@@ -81,7 +82,7 @@ class Fab extends StatelessWidget {
     );
   }
 
-  Widget _fabItem(IconData icn, int index) {
+  Widget _fabItem(PhosphorDuotoneIconData icn, int index) {
     final isSelected = selectedIndex == index;
 
     return GestureDetector(
@@ -98,11 +99,7 @@ class Fab extends StatelessWidget {
               )
             : BoxDecoration(),
         child: IconButton(
-          icon: PhosphorIcon(
-            icn,
-            size: 32,
-            color: AppColors.text,
-          ),
+          icon: PhosphorIcon(icn, size: 32, color: AppColors.text),
           onPressed: () => onItemSelected(index),
         ),
       ),
