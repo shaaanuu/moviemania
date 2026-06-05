@@ -17,9 +17,7 @@ jobs:
       - run: flutter pub get
 
       - name: Create api_key.dart
-        run: |
-          mkdir -p lib/core
-          echo "const String apiKey = '${{ secrets.API_KEY }}';" > lib/core/api_key.dart
+        run: echo "const String apiKey = '${{ secrets.API_KEY }}';" > lib/api_key.dart
 
       - run: flutter build apk --release
 
